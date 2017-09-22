@@ -1,20 +1,12 @@
-# Use an official Python runtime as a parent image
-FROM python:2.7-slim
+FROM scratch
+ADD centos-7-docker.tar.xz /
 
-# Set the working directory to /app
-WORKDIR /app
+LABEL name="CentOS Base Image" \
+    vendor="CentOS" \
+    license="GPLv2" \
+    build-date="20170911"
 
-# Copy the current directory contents into the container at /app
-ADD . /app
+CMD ["/bin/bash"]
 
-# Install any needed packages specified in requirements.txt
-RUN pip install -r requirements.txt
-
-# Make port 80 available to the world outside this container
-EXPOSE 80
-
-# Define environment variable
-ENV NAME World
-
-# Run app.py when the container launches
-CMD ["python", "app.py"]
+RUN yum install -y ipmitool ;
+    pip install -r requirements.txt
