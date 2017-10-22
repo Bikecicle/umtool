@@ -1,5 +1,6 @@
 from model import ServerListPoller
 
+
 def main():
     host_list = ["eb2-2214-sd01ipmi.csc.ncsu.edu"]  # Fill this in appropriately
 
@@ -19,3 +20,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
