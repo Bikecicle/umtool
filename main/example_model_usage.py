@@ -1,12 +1,7 @@
 from model import ServerListPoller
-from model import UsageReportFactory
-
 
 def main():
-    # UsageReportFactory is not yet implemented
-    usage_report_factory = UsageReportFactory()
-
-    host_list = ["eb2tvx02drac.csc.ncsu.edu"]  # Fill this in appropriately
+    host_list = ["eb2-2214-sd01ipmi.csc.ncsu.edu"]  # Fill this in appropriately
 
     text_file_prefix = "report_file.txt"  # For now, this is the actual file path rather than
     # The prefix. This will need to change when we have lots of servers
@@ -16,7 +11,6 @@ def main():
                             # Save to a text file
 
     server_list_poller = ServerListPoller(host_list,
-                                          usage_report_factory,
                                           text_file_prefix=text_file_prefix,
                                           save_method=save_method)
 
