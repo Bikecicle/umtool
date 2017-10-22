@@ -1,0 +1,246 @@
+{'states': ['Predictive failure deasserted'], 'health': 0, 'name': 'P_CATERR_N', 'imprecision': None, 'units': '', 'state_ids': [459776], 'type': 'Processor', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'BIOS_POST_CMPLT', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 6'], 'health': 1, 'name': 'FP_ID_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391814], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Absent'], 'health': 0, 'name': 'RISER1_CNIC_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426880], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': ['Absent'], 'health': 0, 'name': 'SAS_MEZZ_PRENT', 'imprecision': None, 'units': '', 'state_ids': [2426880], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'MAIN_POWER_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': ['upper non-critical threshold'], 'health': 1, 'name': 'SEL_FULLNESS', 'imprecision': 0.5, 'units': '', 'state_ids': [1179908], 'type': 'System Event', 'value': 83.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'BIOSPOST_TIMEOUT', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Platform alert', 'value': None, 'unavailable': 1}
+{'states': ['Predictive failure deasserted'], 'health': 0, 'name': 'POWER_ON_FAIL', 'imprecision': None, 'units': '', 'state_ids': [2360320], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'FAN1_PRSNT', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'FAN2_PRSNT', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'FAN3_PRSNT', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'FAN4_PRSNT', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'FAN5_PRSNT', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'FAN6_PRSNT', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'FAN1_SPEED', 'imprecision': 100.0, 'units': 'RPM', 'state_ids': [], 'type': 'Fan', 'value': 8800.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'FAN2_SPEED', 'imprecision': 100.0, 'units': 'RPM', 'state_ids': [], 'type': 'Fan', 'value': 8800.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'FAN3_SPEED', 'imprecision': 100.0, 'units': 'RPM', 'state_ids': [], 'type': 'Fan', 'value': 9600.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'FAN4_SPEED', 'imprecision': 100.0, 'units': 'RPM', 'state_ids': [], 'type': 'Fan', 'value': 9600.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'FAN5_SPEED', 'imprecision': 100.0, 'units': 'RPM', 'state_ids': [], 'type': 'Fan', 'value': 9200.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'FAN6_SPEED', 'imprecision': 100.0, 'units': 'RPM', 'state_ids': [], 'type': 'Fan', 'value': 9600.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PSU1_VOUT', 'imprecision': 0.049999999999998934, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 12.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PSU1_IOUT', 'imprecision': 0.20000000000000018, 'units': 'A', 'state_ids': [], 'type': 'Current', 'value': 5.2, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PSU1_POUT', 'imprecision': 2.5, 'units': 'W', 'state_ids': [], 'type': 'Power Supply', 'value': 60.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PSU2_VOUT', 'imprecision': 0.049999999999998934, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 12.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PSU2_IOUT', 'imprecision': 0.1999999999999993, 'units': 'A', 'state_ids': [], 'type': 'Current', 'value': 5.6, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PSU2_POUT', 'imprecision': 2.5, 'units': 'W', 'state_ids': [], 'type': 'Power Supply', 'value': 65.0, 'unavailable': 0}
+{'states': ['Absent'], 'health': 0, 'name': 'FM_TPM_CARD_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426880], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'RISER2_PRESENT', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'RISER1_PRESENT', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': ['Absent'], 'health': 0, 'name': 'RISER2_PRESENT_2', 'imprecision': None, 'units': '', 'state_ids': [2426880], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': ['Absent'], 'health': 0, 'name': 'RISER1_PRESENT_3', 'imprecision': None, 'units': '', 'state_ids': [2426880], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': ['Absent'], 'health': 0, 'name': 'RISER1_PRESENT_2', 'imprecision': None, 'units': '', 'state_ids': [2426880], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': ['Absent'], 'health': 0, 'name': 'RISER2_PRESENT_1', 'imprecision': None, 'units': '', 'state_ids': [2426880], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'RISER1_PRESENT_1', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': ['Absent'], 'health': 0, 'name': 'RISER2_CNIC_PRST', 'imprecision': None, 'units': '', 'state_ids': [2426880], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'PSU1_STATUS', 'imprecision': None, 'units': '', 'state_ids': [552704], 'type': 'Power Supply', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'PSU2_STATUS', 'imprecision': None, 'units': '', 'state_ids': [552704], 'type': 'Power Supply', 'value': None, 'unavailable': 0}
+{'states': ['Limit not exceeded'], 'health': 0, 'name': 'P1_PROCHOT', 'imprecision': None, 'units': '', 'state_ids': [460032], 'type': 'Processor', 'value': None, 'unavailable': 0}
+{'states': ['Limit not exceeded'], 'health': 0, 'name': 'P2_PROCHOT', 'imprecision': None, 'units': '', 'state_ids': [460032], 'type': 'Processor', 'value': None, 'unavailable': 0}
+{'states': ['Limit not exceeded'], 'health': 0, 'name': 'PVCCD_P1_VRHOT', 'imprecision': None, 'units': '', 'state_ids': [460032], 'type': 'Processor', 'value': None, 'unavailable': 0}
+{'states': ['Limit not exceeded'], 'health': 0, 'name': 'PVCCP_P1_VRHOT', 'imprecision': None, 'units': '', 'state_ids': [460032], 'type': 'Processor', 'value': None, 'unavailable': 0}
+{'states': ['Limit not exceeded'], 'health': 0, 'name': 'PVCCD_P2_VRHOT', 'imprecision': None, 'units': '', 'state_ids': [460032], 'type': 'Processor', 'value': None, 'unavailable': 0}
+{'states': ['Limit not exceeded'], 'health': 0, 'name': 'PVCCP_P2_VRHOT', 'imprecision': None, 'units': '', 'state_ids': [460032], 'type': 'Processor', 'value': None, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'RTC_ERR_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Asserted'], 'health': 0, 'name': 'PSU1_PWRGD', 'imprecision': None, 'units': '', 'state_ids': [525057], 'type': 'Power Supply', 'value': None, 'unavailable': 0}
+{'states': ['Asserted'], 'health': 0, 'name': 'PSU1_AC_OK', 'imprecision': None, 'units': '', 'state_ids': [525057], 'type': 'Power Supply', 'value': None, 'unavailable': 0}
+{'states': ['Asserted'], 'health': 0, 'name': 'PSU2_PWRGD', 'imprecision': None, 'units': '', 'state_ids': [525057], 'type': 'Power Supply', 'value': None, 'unavailable': 0}
+{'states': ['Asserted'], 'health': 0, 'name': 'PSU2_AC_OK', 'imprecision': None, 'units': '', 'state_ids': [525057], 'type': 'Power Supply', 'value': None, 'unavailable': 0}
+{'states': ['Limit not exceeded'], 'health': 0, 'name': 'P1_MEM23_MEMHOT', 'imprecision': None, 'units': '', 'state_ids': [460032], 'type': 'Processor', 'value': None, 'unavailable': 0}
+{'states': ['Limit not exceeded'], 'health': 0, 'name': 'P1_MEM01_MEMHOT', 'imprecision': None, 'units': '', 'state_ids': [460032], 'type': 'Processor', 'value': None, 'unavailable': 0}
+{'states': ['Limit not exceeded'], 'health': 0, 'name': 'P2_MEM23_MEMHOT', 'imprecision': None, 'units': '', 'state_ids': [460032], 'type': 'Processor', 'value': None, 'unavailable': 0}
+{'states': ['Limit not exceeded'], 'health': 0, 'name': 'P2_MEM01_MEMHOT', 'imprecision': None, 'units': '', 'state_ids': [460032], 'type': 'Processor', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'P1_PRESENT', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'P2_PRESENT', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'P1_TEMP_SENS', 'imprecision': 0.25, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 33.5, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'P2_TEMP_SENS', 'imprecision': 0.25, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 29.0, 'unavailable': 0}
+{'states': ['Limit not exceeded'], 'health': 0, 'name': 'PCH_THERMTRIP_N', 'imprecision': None, 'units': '', 'state_ids': [460032], 'type': 'Processor', 'value': None, 'unavailable': 0}
+{'states': ['Unknown state 1', 'Unknown state 4'], 'health': 1, 'name': 'LED_PSU_STATUS', 'imprecision': None, 'units': '', 'state_ids': [2391809, 2391812], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Unknown state 1', 'Unknown state 4'], 'health': 1, 'name': 'LED_TEMP_STATUS', 'imprecision': None, 'units': '', 'state_ids': [2391809, 2391812], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Unknown state 1', 'Unknown state 4'], 'health': 1, 'name': 'LED_FAN_STATUS', 'imprecision': None, 'units': '', 'state_ids': [2391809, 2391812], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Unknown state 1', 'Unknown state 4'], 'health': 1, 'name': 'LED_HLTH_STATUS', 'imprecision': None, 'units': '', 'state_ids': [2391809, 2391812], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Redundant'], 'health': 0, 'name': 'PS_RDNDNT_MODE', 'imprecision': None, 'units': '', 'state_ids': [527104], 'type': 'Power Supply', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'RISER1_INLET_TMP', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 23.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'RISER2_INLET_TMP', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 23.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'RISER1_OUTLETTMP', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 30.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'RISER2_OUTLETTMP', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 28.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'FP_TEMP_SENSOR', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 20.0, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'HDD1_STATUS', 'imprecision': None, 'units': '', 'state_ids': [880384], 'type': 'Drive Bay', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'HDD2_STATUS', 'imprecision': None, 'units': '', 'state_ids': [880384], 'type': 'Drive Bay', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'HDD3_STATUS', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Drive Bay', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'HDD4_STATUS', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Drive Bay', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'HDD5_STATUS', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Drive Bay', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'HDD6_STATUS', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Drive Bay', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'HDD7_STATUS', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Drive Bay', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'HDD8_STATUS', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Drive Bay', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'HDD9_STATUS', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Drive Bay', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'HDD10_STATUS', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Drive Bay', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'HDD11_STATUS', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Drive Bay', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'HDD12_STATUS', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Drive Bay', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'HDD13_STATUS', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Drive Bay', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'HDD14_STATUS', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Drive Bay', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'HDD15_STATUS', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Drive Bay', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'HDD16_STATUS', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Drive Bay', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'HDD17_STATUS', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Drive Bay', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'HDD18_STATUS', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Drive Bay', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'HDD19_STATUS', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Drive Bay', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'HDD20_STATUS', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Drive Bay', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'HDD21_STATUS', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Drive Bay', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'HDD22_STATUS', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Drive Bay', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'HDD23_STATUS', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Drive Bay', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'HDD24_STATUS', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Drive Bay', 'value': None, 'unavailable': 1}
+{'states': ['Present'], 'health': 0, 'name': 'DDR3_P1_A1_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_A1_TEMP', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 26.0, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'P1_DIMM_A1_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'DDR3_P1_A2_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_A2_TEMP', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 26.0, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'P1_DIMM_A2_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Absent'], 'health': 0, 'name': 'DDR3_P1_A3_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426880], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_A3_TEMP', 'imprecision': None, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'P1_DIMM_A3_LED', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Platform alert', 'value': None, 'unavailable': 1}
+{'states': ['Present'], 'health': 0, 'name': 'DDR3_P1_B1_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_B1_TEMP', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 26.0, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'P1_DIMM_B1_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'DDR3_P1_B2_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_B2_TEMP', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 26.0, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'P1_DIMM_B2_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Absent'], 'health': 0, 'name': 'DDR3_P1_B3_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426880], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_B3_TEMP', 'imprecision': None, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'P1_DIMM_B3_LED', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Platform alert', 'value': None, 'unavailable': 1}
+{'states': ['Present'], 'health': 0, 'name': 'DDR3_P1_C1_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_C1_TEMP', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 24.0, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'P1_DIMM_C1_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'DDR3_P1_C2_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_C2_TEMP', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 26.0, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'P1_DIMM_C2_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Absent'], 'health': 0, 'name': 'DDR3_P1_C3_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426880], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_C3_TEMP', 'imprecision': None, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'P1_DIMM_C3_LED', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Platform alert', 'value': None, 'unavailable': 1}
+{'states': ['Present'], 'health': 0, 'name': 'DDR3_P1_D1_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_D1_TEMP', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 25.0, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'P1_DIMM_D1_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'DDR3_P1_D2_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_D2_TEMP', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 25.0, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'P1_DIMM_D2_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Absent'], 'health': 0, 'name': 'DDR3_P1_D3_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426880], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_D3_TEMP', 'imprecision': None, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'P1_DIMM_D3_LED', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Platform alert', 'value': None, 'unavailable': 1}
+{'states': ['Present'], 'health': 0, 'name': 'DDR3_P2_E1_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_E1_TEMP', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 27.0, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'P2_DIMM_E1_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'DDR3_P2_E2_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_E2_TEMP', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 26.0, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'P2_DIMM_E2_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Absent'], 'health': 0, 'name': 'DDR3_P2_E3_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426880], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_E3_TEMP', 'imprecision': None, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'P2_DIMM_E3_LED', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Platform alert', 'value': None, 'unavailable': 1}
+{'states': ['Present'], 'health': 0, 'name': 'DDR3_P2_F1_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_F1_TEMP', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 21.0, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'P2_DIMM_F1_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'DDR3_P2_F2_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_F2_TEMP', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 21.0, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'P2_DIMM_F2_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Absent'], 'health': 0, 'name': 'DDR3_P2_F3_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426880], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_F3_TEMP', 'imprecision': None, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'P2_DIMM_F3_LED', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Platform alert', 'value': None, 'unavailable': 1}
+{'states': ['Present'], 'health': 0, 'name': 'DDR3_P2_G1_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_G1_TEMP', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 20.0, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'P2_DIMM_G1_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'DDR3_P2_G2_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_G2_TEMP', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 20.0, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'P2_DIMM_G2_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Absent'], 'health': 0, 'name': 'DDR3_P2_G3_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426880], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_G3_TEMP', 'imprecision': None, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'P2_DIMM_G3_LED', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Platform alert', 'value': None, 'unavailable': 1}
+{'states': ['Present'], 'health': 0, 'name': 'DDR3_P2_H1_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_H1_TEMP', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 20.0, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'P2_DIMM_H1_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Present'], 'health': 0, 'name': 'DDR3_P2_H2_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426881], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_H2_TEMP', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 20.0, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'P2_DIMM_H2_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Absent'], 'health': 0, 'name': 'DDR3_P2_H3_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426880], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_H3_TEMP', 'imprecision': None, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'P2_DIMM_H3_LED', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Platform alert', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'P12V_STBY_V_MOIN', 'imprecision': 0.058999999999999275, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 12.154, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'P12V_AUX_V_MOIN', 'imprecision': 0.05900000000000105, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 12.036000000000001, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'P12V_V_MOIN', 'imprecision': 0.058999999999999275, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 11.977, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'P5V_V_MOIN', 'imprecision': 0.024499999999999744, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 5.243, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'P3V3_V_MOIN', 'imprecision': 0.016000000000000014, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 3.4080000000000004, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'P1V5_SSB', 'imprecision': 0.007800000000000029, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 1.4976, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'P1V1_SSB', 'imprecision': 0.007800000000000029, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 1.1154000000000002, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'P3V3_BAT_V_MOIN', 'imprecision': 0.016000000000000014, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 3.104, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PVTT_DDR_AB', 'imprecision': 0.007900000000000018, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 0.7584000000000001, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PVTT_DDR_CD', 'imprecision': 0.007900000000000018, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 0.7584000000000001, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PVTT_DDR_EF', 'imprecision': 0.007900000000000018, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 0.7584000000000001, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PVTT_DDR_GH', 'imprecision': 0.007900000000000018, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 0.7584000000000001, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PVTT_P1', 'imprecision': 0.007799999999999807, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 1.053, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PVDDQ_AB', 'imprecision': 0.011700000000000044, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 1.4976, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PVDDQ_CD', 'imprecision': 0.011700000000000044, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 1.4976, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PVSA_P1', 'imprecision': 0.007800000000000029, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 0.897, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PVPLL_P1', 'imprecision': 0.007800000000000029, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 1.794, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PVCCP_P1', 'imprecision': 0.007800000000000029, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 0.936, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PVTT_P2', 'imprecision': 0.007799999999999807, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 1.053, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PVSA_P2', 'imprecision': 0.007800000000000029, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 0.897, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PVCCP_P2', 'imprecision': 0.007800000000000029, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 0.8736, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PVDDQ_EF', 'imprecision': 0.011700000000000044, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 1.5093, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PVDDQ_GH', 'imprecision': 0.011700000000000044, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 1.4976, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PVPLL_P2', 'imprecision': 0.007800000000000029, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 1.7862, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'POWER_USAGE', 'imprecision': 8.0, 'units': 'W', 'state_ids': [], 'type': 'Power Supply', 'value': 136.0, 'unavailable': 0}
+{'states': ['Absent'], 'health': 0, 'name': 'VICP81E_0_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426880], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'VICP81E_0_OVRTMP', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Add-in Card', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'VICP81E_0_TMP1', 'imprecision': None, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'VICP81E_0_TMP2', 'imprecision': None, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'VICP81E_0_TMP3', 'imprecision': None, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': None, 'unavailable': 1}
+{'states': ['Absent'], 'health': 0, 'name': 'VICP81E_1_PRS', 'imprecision': None, 'units': '', 'state_ids': [2426880], 'type': 'Entity Presence', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'VICP81E_1_OVRTMP', 'imprecision': None, 'units': '', 'state_ids': [], 'type': 'Add-in Card', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'VICP81E_1_TMP1', 'imprecision': None, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'VICP81E_1_TMP2', 'imprecision': None, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'VICP81E_1_TMP3', 'imprecision': None, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': None, 'unavailable': 1}
+{'states': ['Limit not exceeded'], 'health': 0, 'name': 'P1_THERMTRIP_N', 'imprecision': None, 'units': '', 'state_ids': [460032], 'type': 'Processor', 'value': None, 'unavailable': 0}
+{'states': ['Limit not exceeded'], 'health': 0, 'name': 'P2_THERMTRIP_N', 'imprecision': None, 'units': '', 'state_ids': [460032], 'type': 'Processor', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_A1_ECC', 'imprecision': 0.5, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': 0.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_A2_ECC', 'imprecision': 0.5, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': 0.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_A3_ECC', 'imprecision': None, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_B1_ECC', 'imprecision': 0.5, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': 0.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_B2_ECC', 'imprecision': 0.5, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': 0.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_B3_ECC', 'imprecision': None, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_C1_ECC', 'imprecision': 0.5, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': 0.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_C2_ECC', 'imprecision': 0.5, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': 0.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_C3_ECC', 'imprecision': None, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_D1_ECC', 'imprecision': 0.5, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': 0.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_D2_ECC', 'imprecision': 0.5, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': 0.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P1_D3_ECC', 'imprecision': None, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_E1_ECC', 'imprecision': 0.5, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': 0.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_E2_ECC', 'imprecision': 0.5, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': 0.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_E3_ECC', 'imprecision': None, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_F1_ECC', 'imprecision': 0.5, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': 0.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_F2_ECC', 'imprecision': 0.5, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': 0.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_F3_ECC', 'imprecision': None, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_G1_ECC', 'imprecision': 0.5, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': 0.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_G2_ECC', 'imprecision': 0.5, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': 0.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_G3_ECC', 'imprecision': None, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': None, 'unavailable': 1}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_H1_ECC', 'imprecision': 0.5, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': 0.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_H2_ECC', 'imprecision': 0.5, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': 0.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'DDR3_P2_H3_ECC', 'imprecision': None, 'units': 'error', 'state_ids': [], 'type': 'Memory', 'value': None, 'unavailable': 1}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'P1_ERR_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'P2_ERR_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'FAN1_ERR_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'FAN2_ERR_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'FAN3_ERR_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'FAN4_ERR_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'FAN5_ERR_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'FAN6_ERR_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'SD_CARD1_ERR_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': ['Unknown state 0', 'Unknown state 5'], 'health': 1, 'name': 'SD_CARD2_ERR_LED', 'imprecision': None, 'units': '', 'state_ids': [2391808, 2391813], 'type': 'Platform alert', 'value': None, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'P3V3_AUX', 'imprecision': 0.016000000000000014, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 3.4080000000000004, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'P1V8_AUX', 'imprecision': 0.007800000000000029, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 1.8096, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'P1V5_AUX', 'imprecision': 0.007800000000000029, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 1.4976, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'P1V0_AUX', 'imprecision': 0.007799999999999918, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 1.0062, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'P1V1_AUX', 'imprecision': 0.007800000000000029, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 1.0998, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'P0V75_AUX', 'imprecision': 0.007900000000000018, 'units': 'V', 'state_ids': [], 'type': 'Voltage', 'value': 0.7505000000000001, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PSU1_PIN', 'imprecision': 2.5, 'units': 'W', 'state_ids': [], 'type': 'Power Supply', 'value': 70.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PSU2_PIN', 'imprecision': 2.5, 'units': 'W', 'state_ids': [], 'type': 'Power Supply', 'value': 75.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PSU1_TEMP', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 16.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PSU2_TEMP', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 16.0, 'unavailable': 0}
+{'states': [], 'health': 0, 'name': 'PCH_TEMP_SENS', 'imprecision': 0.5, 'units': '\xc2\xb0C', 'state_ids': [], 'type': 'Temperature', 'value': 44.0, 'unavailable': 0}
