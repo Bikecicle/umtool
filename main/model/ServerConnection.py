@@ -21,8 +21,7 @@ class ServerConnection:
     #       If using the "t" flag for save_method, this option must be set
     #       so that the save flag
     #
-    def __init__(self, hostname, usage_report_factory, save_method="d", text_file_path=""):
-        self.hostname = hostname
+    def __init__(self, usage_report_factory, save_method="d", text_file_path=""):
         self.usage_report_factory = usage_report_factory
         self.save_method = save_method
         self.usage_report_data = []  # Only used if save_method 'm' flag is set
@@ -30,7 +29,7 @@ class ServerConnection:
 
     # Polls the hostname and then saves the usage report to the database
     def poll_connection_and_save_usage_report(self):
-        usage_report = self.usage_report_factory.get_usage_report(self.hostname)
+        usage_report = self.usage_report_factory.get_usage_report()
 
         # Set flags
         if 'd' in self.save_method:

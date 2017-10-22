@@ -1,5 +1,6 @@
+from pyghmi.ipmi import command
+from UsageReportFactory import UsageReportFactory
 from ServerConnection import ServerConnection
-
 
 class ServerListPoller:
     # @param host_list: Just a list of strings with the server to connect to
@@ -22,11 +23,10 @@ class ServerListPoller:
     #       If using the "t" flag for save_method, this option must be set
     #       so that the save flag
     #
-    def __init__(self, host_list, usage_report_factory, save_method='', text_file_prefix=''):
+    def __init__(self, host_list, save_method='', text_file_prefix=''):
         self.host_list = host_list
         # TODO: Will we ever modify the connection list at runtime?
         self.server_connection_list = []
-        self.usage_report_factory = usage_report_factory
         self.save_method = save_method
         self.text_file_prefix = text_file_prefix
 
@@ -39,8 +39,13 @@ class ServerListPoller:
     def _init_server_connection_list(self):
         for host in self.host_list:
             text_file_path = self.text_file_prefix  # Later on, this will be based on the host
-            server_connection = ServerConnection(host,
-                                                 self.usage_report_factory,
+            hostname = ""
+            userid = ""
+            password = ""
+            unique_id = ""
+            ipmi = command.Command(bmc=hostname, userid=userid, password=password)
+            usage_report_factory = UsageReportFactory(ipmi, unique_id)
+            server_connection = ServerConnection(usage_report_factory,
                                                  self.save_method,
                                                  text_file_path)
             self.server_connection_list.append(server_connection)
