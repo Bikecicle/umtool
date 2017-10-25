@@ -39,12 +39,8 @@ class ServerListPoller:
     def _init_server_connection_list(self):
         for host in self.host_list:
             text_file_path = self.text_file_prefix  # Later on, this will be based on the host
-            hostname = ""
-            userid = ""
-            password = ""
-            unique_id = ""
-            ipmi = command.Command(bmc=hostname, userid=userid, password=password)
-            usage_report_factory = UsageReportFactory(ipmi, unique_id)
+            ipmi = command.Command(bmc=host.hostname, userid=host.userid, password=host.password)
+            usage_report_factory = UsageReportFactory(ipmi, host)
             server_connection = ServerConnection(usage_report_factory,
                                                  self.save_method,
                                                  text_file_path)
