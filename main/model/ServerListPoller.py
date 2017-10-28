@@ -23,18 +23,24 @@ class ServerListPoller:
     #       If using the "t" flag for save_method, this option must be set
     #       so that the save flag
     #
-    def __init__(self, host_list, save_method='', text_file_prefix=''):
+    def __init__(self, host_list, polling_delta, save_method='', text_file_prefix=''):
         self.host_list = host_list
+        self.polling_delta = polling_delta
         # TODO: Will we ever modify the connection list at runtime?
         self.server_connection_list = []
         self.save_method = save_method
         self.text_file_prefix = text_file_prefix
+        self.stopped = False
 
         self._init_server_connection_list()
 
     def poll_servers(self):
-        for server_connection in self.server_connection_list:
-            server_connection.poll_connection_and_save_usage_report()
+        while not self.stopped:
+            for server_connection in self.server_connection_list:
+                server_connection.poll_connection_and_save_usage_report()
+                if self.stopped:
+                    break
+            # TODO: Wait for polling_data milliseconds
 
     def _init_server_connection_list(self):
         for host in self.host_list:
@@ -45,3 +51,6 @@ class ServerListPoller:
                                                  self.save_method,
                                                  text_file_path)
             self.server_connection_list.append(server_connection)
+
+    def kill(self):
+        self.stopped = True

@@ -1,6 +1,6 @@
 
 
-class host:
+class Host:
 
     def __init__(self, hostname, userid, password, unique_id):
         self.hostname = hostname
