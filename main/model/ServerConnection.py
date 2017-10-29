@@ -1,4 +1,4 @@
-
+from db.DatabaseMisc import save_usage_report
 
 class ServerConnection:
     # @param Hostname: Just a string with the server to connect to
@@ -34,11 +34,10 @@ class ServerConnection:
         # Set flags
         if 'd' in self.save_method:
             # save to database
-            pass
+            save_usage_report(usage_report)
         if 'm' in self.save_method:
-            self.usage_report_data.append(usage_report)
+            pass
         if 't' in self.save_method:
-            with open(self.text_file_path, 'a') as myfile:
-                myfile.write(usage_report.get_string_row())
+            pass
         if 'p' in self.save_method:
-            print(usage_report.get_string_row())
+            pass
