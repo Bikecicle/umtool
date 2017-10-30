@@ -1,4 +1,3 @@
-
 class ServerUsageReport:
     def __init__(self, unique_id, unix_epoch_timestamp, packaged_sensor_readings):
         self.unique_id = unique_id
@@ -16,8 +15,4 @@ class ServerUsageReport:
         }
 
         return doc
-
-    # Return a plain-text representation of a usage report row
-    def get_string_row(self):
-        return "exampleID, 1506360452, 30"
 

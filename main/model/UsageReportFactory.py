@@ -9,7 +9,6 @@ class UsageReportFactory:
         self.ipmi = ipmi
         self.unique_id = unique_id
 
-
     def get_usage_report(self):
         readings = list(self.ipmi.get_sensor_data())
         timestamp = int(round(time.time() * 1000))

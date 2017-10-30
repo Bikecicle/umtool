@@ -1,4 +1,5 @@
-from db.DatabaseMisc import save_usage_report
+import db.DatabaseMisc
+
 
 class ServerConnection:
     # @param Hostname: Just a string with the server to connect to
@@ -26,6 +27,7 @@ class ServerConnection:
         self.save_method = save_method
         self.usage_report_data = []  # Only used if save_method 'm' flag is set
         self.text_file_path = text_file_path  # Only used if save_method 't' flag is set
+        self.db_connection = db.DatabaseMisc()
 
     # Polls the hostname and then saves the usage report to the database
     def poll_connection_and_save_usage_report(self):
@@ -34,7 +36,7 @@ class ServerConnection:
         # Set flags
         if 'd' in self.save_method:
             # save to database
-            save_usage_report(usage_report)
+            self.db_connection.save_usage_report(usage_report)
         if 'm' in self.save_method:
             pass
         if 't' in self.save_method:
