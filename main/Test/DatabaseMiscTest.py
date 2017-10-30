@@ -23,7 +23,7 @@ class TestDatabaseMisc(unittest.TestCase):
         self.job_id = dm.generate_unique_id()
         self.container_a_id = dm.generate_unique_id()
         self.container_b_id = dm.generate_unique_id()
-        self.host_list = dm.generate_mock_host_list(2000)
+        self.host_list = generate_mock_host_list(2000)
 
         self.host_list_a = self.host_list[0:1000]
         self.host_list_b = self.host_list[1000:2000]
@@ -37,7 +37,7 @@ class TestDatabaseMisc(unittest.TestCase):
         # to the method
 
         # Create the job
-        result = dm.createJob(self.job_id, self.container_a_id, self.host_list_a)
+        result = dm.create_job(self.job_id, self.container_a_id, self.host_list_a)
 
         self.assertTrue(result)  # Make sure creation was successful
         # At this point
