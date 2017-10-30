@@ -1,5 +1,6 @@
 from db.DatabaseMisc import save_usage_report
 
+
 class ServerConnection:
     # @param Hostname: Just a string with the server to connect to
     #       This could be something like "10.2.2.2" or "abc.ncsu.edu"
