@@ -1,8 +1,10 @@
 from pyghmi.ipmi import command
 from UsageReportFactory import UsageReportFactory
 from ServerConnection import ServerConnection
+import time
 
-class ServerListPoller:
+
+class Poller:
     # @param host_list: Just a list of strings with the server to connect to
     #       This could be something like "10.2.2.2" or "abc.ncsu.edu"
     #
@@ -23,40 +25,34 @@ class ServerListPoller:
     #       If using the "t" flag for save_method, this option must be set
     #       so that the save flag
     #
-    def __init__(self, host_list, polling_delta, save_method='', text_file_prefix=''):
-        self.host_list = host_list
-        self.polling_delta = polling_delta
-        # TODO: Will we ever modify the connection list at runtime?
+    def __init__(self, host_list, interval, save_method='', text_file_prefix=''):
+        self.interval = interval  # Polling interval in seconds
         self.server_connection_list = []
         self.save_method = save_method
         self.text_file_prefix = text_file_prefix
         self.stopped = False
-
-        self._init_server_connection_list()
-
-    def poll_servers(self):
-        while not self.stopped:
-            for server_connection in self.server_connection_list:
-                server_connection.poll_connection_and_save_usage_report()
-                if self.stopped:
-                    break
-            # TODO: Wait for polling_data milliseconds
-
-    def _init_server_connection_list(self):
-        for host in self.host_list:
+        for host in host_list:
             text_file_path = self.text_file_prefix  # Later on, this will be based on the host
 
             ipmi = command.Command(bmc=host.hostname, userid=host.userid, password=host.password)
-            hostname = host
-            userid = "admin"
-            password = "sdteam18"
-            unique_id = "1337"
-            ipmi = command.Command(bmc=hostname, userid=userid, password=password)
-            usage_report_factory = UsageReportFactory(ipmi, unique_id)
+            usage_report_factory = UsageReportFactory(ipmi, host.unique_id)
             server_connection = ServerConnection(usage_report_factory,
                                                  self.save_method,
                                                  text_file_path)
             self.server_connection_list.append(server_connection)
+
+    def poll_servers(self):
+        while not self.stopped:
+            t_start = time.time()
+            for server_connection in self.server_connection_list:
+                server_connection.poll_connection_and_save_usage_report()
+                if self.stopped:
+                    break
+            t_end = time.time()
+            t_delta = t_end - t_start
+            # Wait until end of polling interval (unless polling took longer than interval)
+            if t_delta < self.interval:
+                time.sleep(self.interval - t_delta)
 
     def kill(self):
         self.stopped = True

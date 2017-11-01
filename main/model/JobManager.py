@@ -1,14 +1,17 @@
 import docker
+from DatabaseMisc import DatabaseMisc
+from Job import Job
 
 spawner_host_max = 1000
-spawner_image = "" # TODO: decide on spawner container image name
+spawner_image = ""  # TODO: decide on spawner container image name
 
 class JobManager:
 
     def __init__(self):
         self.client = docker.from_env()
         self.spawners = []
-        self.jobs = {} # Maps job id to list of delegate spawners
+        self.jobs = {} # Maps job id to list of delegate spawner ids
+        self.db = DatabaseMisc()
 
     # Resource Management
 
@@ -19,74 +22,66 @@ class JobManager:
 
     # Job Management
 
-    def start_job(self, hosts, frequency, duration):
+    def start_job(self, host_list, interval):
         # Assign job id
-        # TODO
-        id = 0
+        job_id = self.db.generate_unique_id()
 
         # Delegate amongst spawners
         delegates = []
         for spawner in self.spawners:
             remaining_connections = spawner_host_max - spawner.total_hosts
-            if remaining_connections > len(hosts):
-                spawner.add_job(id, hosts, frequency, duration)
-                hosts = []
+            if remaining_connections > len(host_list):
+                self.delegate(job_id, interval, host_list, spawner)
+                host_list = []
                 break
             else:
                 host_subset = []
                 for i in list(remaining_connections):
-                    host_subset.append(hosts.remove())
-                spawner.add_job(id, host_subset, frequency, duration)
-            delegates.append(spawner)
+                    host_subset.append(host_list.remove())
+                    self.delegate(job_id, interval, host_subset, spawner)
+            delegates.append(spawner.spawner_id)
 
         # Create more spawners if host connections have maxed out
-        while len(hosts) > 0:
+        while len(host_list) > 0:
             spawner = self.start_new_spawner()
-            if len(hosts) < spawner_host_max:
-                spawner.add_job(id, hosts, frequency, duration)
-                hosts = []
+            if len(host_list) < spawner_host_max:
+                self.delegate(job_id, interval, host_list, spawner)
+                host_list = []
             else:
                 host_subset = []
                 for i in list(spawner_host_max):
-                    host_subset.append(hosts.remove())
-                spawner.add_job(id, host_subset, frequency, duration)
-            delegates.append(spawner)
+                    host_subset.append(host_list.remove())
+                    self.delegate(job_id, interval, host_subset, spawner)
+            delegates.append(spawner.spawner_id)
 
-        # Map job id to delegate spawners
+        # Map job id to delegate spawner ids
         self.jobs[id] = delegates
 
+    def delegate(self, job_id, interval, host_list, spawner):
+        spawner.jobs[job_id] = host_list
+        spawner.total_hosts += len(host_list)
+        self.db.create_job(Job(job_id, interval, host_list), spawner.spawner_id)
+
     def list_jobs(self):
-        for id in self.jobs:
-            self.job_status(id)
-        # TODO: see job_status()
+        # TODO: See job_status
+        pass
 
-    def job_status(self, id):
-        for spawner in self.jobs[id]:
-            spawner.job_status(id)
-        # TODO: figure out how to present status and combine reports from delegates
+    def job_status(self, job_id):
+        # TODO: Figure out format of job status to return
+        pass
 
-    def kill_job(self, id):
-        for spawner in self.jobs[id]:
-            spawner.kill_job(id)
+    def kill_job(self, job_id):
+        self.db.kill_job(job_id)
 
     def kill_all_jobs(self):
-        for spawner in self.spawners:
-            spawner.kill_all_jobs()
+        for job_id in self.jobs:
+            self.kill_job(job_id)
 
 class Spawner:
 
     def __init__(self, container):
         
-        self.id = id
-        jobs = {} # Maps job id to list of hosts
-        total_hosts = 0
-
-    # The following functions will be implemented based on how commands will be sent to the manager running on the container
-
-    # TODO: def add_job(self, id, hosts, frequency, duration):
-
-    # TODO: def job_status(self, id):
-
-    # TODO: def kill_job(self, id):
-
-    # TODO: def kill_all_jobs(self):
+        self.container = container
+        self.spawner_id = self.container.id
+        self.jobs = {} # Maps job id to list of hosts
+        self.total_hosts = 0

@@ -22,10 +22,14 @@ class DatabaseMisc:
         pass
 
     # Check if a job is supposed to die
-    def check_job_orders(self, job_id):
+    def check_kill_order(self, job_id):
         pass
 
-    # Start a job given a jobID, container ID and a list of dictionaries with the below spec:
+    # Check assigned jobs for a given spawner (returns list of Job data structures - see model.Job.Job)
+    def check_job_assignments(self, spawner_id):
+        pass
+
+    # Start a job given a jobID, spawner ID and a list of dictionaries with the below spec:
     #
     # (hostnameDictionaryList)
     # {"hostname": <host_string>,
@@ -36,13 +40,14 @@ class DatabaseMisc:
     # Returns true if the creation was successful. Otherwise false, but it will probably throw an exception
     # Any exceptions this method throws should be caught, so report them to whoever is in charge of maintaining
     # this method
-    def create_job(self, job_id, container_id, host_info):
+    # TODO: Maybe use model.Job.Job here too? - Griffin
+    def create_job(self, job_id, spawner_id, host_info):
         # TODO: See if job already exists
 
-        # Create new job with container ID
+        # Create new job with spawner ID
         doc = {
             'job_id': job_id,
-            'container_id': container_id,
+            'spawner_id': spawner_id,
             'active': True,
             'hosts': host_info
         }
