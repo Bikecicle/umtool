@@ -1,4 +1,4 @@
-import DatabaseMisc
+from DatabaseMisc import DatabaseMisc
 
 
 class ServerConnection:
@@ -22,24 +22,25 @@ class ServerConnection:
     #       If using the "t" flag for save_method, this option must be set
     #       so that the save flag
     #
-    def __init__(self, usage_report_factory, save_method="d", text_file_path=""):
+    def __init__(self, usage_report_factory):
         self.usage_report_factory = usage_report_factory
-        self.save_method = save_method
-        self.usage_report_data = []  # Only used if save_method 'm' flag is set
-        self.text_file_path = text_file_path  # Only used if save_method 't' flag is set
+        #self.save_method = save_method
+        #self.usage_report_data = []  # Only used if save_method 'm' flag is set
+        #self.text_file_path = text_file_path  # Only used if save_method 't' flag is set
         self.db_connection = DatabaseMisc()
 
     # Polls the hostname and then saves the usage report to the database
     def poll_connection_and_save_usage_report(self):
         usage_report = self.usage_report_factory.get_usage_report()
+        self.db_connection.save_usage_report(usage_report)
 
         # Set flags
-        if 'd' in self.save_method:
-            # save to database
-            self.db_connection.save_usage_report(usage_report)
-        if 'm' in self.save_method:
-            pass
-        if 't' in self.save_method:
-            pass
-        if 'p' in self.save_method:
-            pass
+        #if 'd' in self.save_method:
+        #    # save to database
+        #    self.db_connection.save_usage_report(usage_report)
+        #if 'm' in self.save_method:
+        #    pass
+        #if 't' in self.save_method:
+        #    pass
+        #if 'p' in self.save_method:
+        #    pass

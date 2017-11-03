@@ -1,4 +1,4 @@
-from model import ServerListPoller
+from model import Poller
 
 
 def main():
@@ -11,7 +11,7 @@ def main():
                             # Print to standard output
                             # Save to a text file
 
-    server_list_poller = ServerListPoller(host_list,
+    server_list_poller = Poller(host_list,
                                           text_file_prefix=text_file_prefix,
                                           save_method=save_method)
 
