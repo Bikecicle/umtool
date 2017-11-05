@@ -53,17 +53,10 @@ class DatabaseMisc:
 
         # This is what's not going to be in the job (unless that model gets changed around)
         doc['active'] = True
-        doc['spawner_id'] = spawner_id
-
-        doc = {
-            'job_id': str(job_object.job_id),
-            'spawner_id': str(spawner_id),
-            'active': True,
-            'interval': int(job_object.interval),
-            'hosts': job_object.host_list
+        doc['spawner'] = {
+            'spawner_id': spawner_id,
+            'active': True
         }
-
-        # TODO: Remove, testing purposes only
 
         # Insert into db
         result = self.job_table.insert_one(doc)
