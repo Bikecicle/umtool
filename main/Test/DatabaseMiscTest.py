@@ -50,6 +50,9 @@ class TestDatabaseMisc(unittest.TestCase):
 
         self.assertTrue(result)  # Make sure creation was successful
 
+        self.db_obj.check_job_assignments(self.spawner_a_id)
+
+
     def tearDown(self):
         pass
 

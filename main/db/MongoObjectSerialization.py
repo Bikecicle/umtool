@@ -38,7 +38,8 @@ def get_host_serialization(host_object):
     doc = {
         'hostname': host_object.hostname,
         'username': host_object.userid,
-        'password': host_object.password
+        'password': host_object.password,
+        'unique_id': host_object.unique_id
     }
 
     return doc

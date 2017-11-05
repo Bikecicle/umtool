@@ -4,6 +4,7 @@ import random
 
 from pymongo import MongoClient
 import MongoObjectSerialization as mos
+import MongoObjectDeSerialization as mods
 
 # How many bits to use for unique IDs
 NUM_ID_BITS = 4096
@@ -30,7 +31,14 @@ class DatabaseMisc:
 
     # Check assigned jobs for a given spawner (returns list of Job data structures - see model.Job.Job)
     def check_job_assignments(self, spawner_id):
-        pass
+        query = {
+            'spawner.spawner_id': spawner_id
+        }
+        result = self.job_table.find(query)
+
+        jobs_list = mods.get_job_list_deserialization(result)
+
+        return jobs_list
 
     # Start a job given a jobID, spawner ID, list of hosts (objects)
     #
