@@ -1,7 +1,7 @@
 from ServerUsageReport import ServerUsageReport
 from time import time
-from PackagedSensorReading import PackagedSensorReading
-from pyghmi.ipmi import command
+#from PackagedSensorReading import PackagedSensorReading
+#from pyghmi.ipmi import command
 
 
 class UsageReportFactory:

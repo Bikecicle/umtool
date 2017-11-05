@@ -3,6 +3,7 @@ from __future__ import print_function
 import random
 
 from pymongo import MongoClient
+import MongoObjectSerialization as mos
 
 # How many bits to use for unique IDs
 NUM_ID_BITS = 4096
@@ -12,6 +13,8 @@ class DatabaseMisc:
     def __init__(self):
         self.client = MongoClient()
         self.db = self.client.utilize
+        self.job_table = self.db.job_tracking_table
+        self.usage_report_table = self.db.usage_report_table
 
     # Sets the "active" flag of a job to false
     def kill_job(self, job_id):
@@ -29,36 +32,49 @@ class DatabaseMisc:
     def check_job_assignments(self, spawner_id):
         pass
 
-    # Start a job given a jobID, spawner ID and a list of dictionaries with the below spec:
-    #
-    # (hostnameDictionaryList)
-    # {"hostname": <host_string>,
-    # "username": <username_string>,
-    # "password": <password_string
-    # }
+    # Start a job given a jobID, spawner ID, list of hosts (objects)
     #
     # Returns true if the creation was successful. Otherwise false, but it will probably throw an exception
     # Any exceptions this method throws should be caught, so report them to whoever is in charge of maintaining
     # this method
     # TODO: Maybe use model.Job.Job here too? - Griffin
-    def create_job(self, job_id, spawner_id, host_info):
+    def create_job(self, job_object, spawner_id):
+        """
+        :param job_object:
+        :type job_object: Job.Job
+        :param spawner_id:
+        :type spawner_id: str
+        :return:
+        """
         # TODO: See if job already exists
 
-        # Create new job with spawner ID
+        # Get the core of the job
+        doc = mos.get_job_serialization(job_object)
+
+        # This is what's not going to be in the job (unless that model gets changed around)
+        doc['active'] = True
+        doc['spawner_id'] = spawner_id
+
         doc = {
-            'job_id': job_id,
-            'spawner_id': spawner_id,
+            'job_id': str(job_object.job_id),
+            'spawner_id': str(spawner_id),
             'active': True,
-            'hosts': host_info
+            'interval': int(job_object.interval),
+            'hosts': job_object.host_list
         }
 
+        # TODO: Remove, testing purposes only
+
         # Insert into db
-        return True
+        result = self.job_table.insert_one(doc)
+
+        return result
 
     # Save usage report to the database
     def save_usage_report(self, usage_report):
         doc = usage_report.get_document_serialization()
-        result = self.db.server_usage_reports.insert_one(doc)
+        result = self.usage_report_table.insert_one(doc)
+        return result
 
     # Generate a random string that serves as a unique ID for any purpose
     @staticmethod
