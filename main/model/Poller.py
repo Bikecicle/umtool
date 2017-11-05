@@ -13,6 +13,7 @@ class Poller:
             text_file_path = self.text_file_prefix  # Later on, this will be based on the host
 
             ipmi = command.Command(bmc=host.hostname, userid=host.userid, password=host.password)
+            print host.hostname + " - ipmi connection established"
             usage_report_factory = UsageReportFactory(ipmi, host.unique_id)
             server_connection = ServerConnection(usage_report_factory)
             self.server_connection_list.append(server_connection)

@@ -1,4 +1,4 @@
-from DatabaseMisc import DatabaseMisc
+from db import DatabaseMisc as dm
 from Poller import Poller
 
 class PollerManager:
@@ -14,9 +14,7 @@ class PollerManager:
         for job in jobs:
             if not self.pollers.has_key(job.job_id):
                 # Create new poller, start polling, and store in map
-                poller = Poller(job.host_list, job.interval)
-                poller.poll_servers()
-                self.pollers[job.job_id] = poller
+                self.start_job(job)
 
         # Check for kill commands
         for job_id in self.pollers:
@@ -24,3 +22,8 @@ class PollerManager:
                 self.pollers[job_id].kill()
                 # TODO: Notify database of successful kill?
 
+
+    def start_job(self, job):
+        poller = Poller(job.host_list, job.interval)
+        poller.poll_servers()
+        self.pollers[job.job_id] = poller

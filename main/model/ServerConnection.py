@@ -1,4 +1,4 @@
-from DatabaseMisc import DatabaseMisc
+from db import DatabaseMisc as dm
 
 
 class ServerConnection:
