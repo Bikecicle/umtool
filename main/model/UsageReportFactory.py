@@ -11,5 +11,5 @@ class UsageReportFactory:
 
     def get_usage_report(self):
         readings = list(self.ipmi.get_sensor_data())
-        timestamp = int(round(time.time() * 1000))
+        timestamp = int(round(time() * 1000))
         return ServerUsageReport(self.unique_id, timestamp, readings)

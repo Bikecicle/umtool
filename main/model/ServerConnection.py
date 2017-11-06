@@ -27,7 +27,7 @@ class ServerConnection:
         #self.save_method = save_method
         #self.usage_report_data = []  # Only used if save_method 'm' flag is set
         #self.text_file_path = text_file_path  # Only used if save_method 't' flag is set
-        self.db_connection = DatabaseMisc()
+        self.db_connection = dm.DatabaseMisc()
 
     # Polls the hostname and then saves the usage report to the database
     def poll_connection_and_save_usage_report(self):

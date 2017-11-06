@@ -1,5 +1,5 @@
 from bottle import route, run, post
-from PollerManager import PollerManager
+from model.PollerManager import PollerManager
 from model.Job import Job, Host
 from db import DatabaseMisc as dm
 import sys
