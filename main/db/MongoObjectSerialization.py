@@ -43,3 +43,33 @@ def get_host_serialization(host_object):
     }
 
     return doc
+
+
+def get_server_usage_report_serialization(server_usage_report):
+    """
+
+    :param server_usage_report:
+    :type server_usage_report ServerUsageReport.ServerUsageReport
+    :return:
+    """
+    serialized_readings = [get_sensor_reading_serialization(sensor_reading)
+                           for sensor_reading in server_usage_report.sensor_reading]
+
+    doc = {
+        "unique_id": str(server_usage_report.unique_id),
+        "timestamp": long(server_usage_report.unix_epoch_timestamp),
+        "readings": serialized_readings
+    }
+
+    return doc
+
+
+def get_sensor_reading_serialization(sensor_reading):
+    doc = {
+        "type": sensor_reading.type,
+        "value": sensor_reading.value,
+        "units": sensor_reading.units,
+        "name": sensor_reading.name
+    }
+
+    return doc
