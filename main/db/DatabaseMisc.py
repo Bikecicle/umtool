@@ -78,7 +78,7 @@ class DatabaseMisc:
 
     # Save usage report to the database
     def save_usage_report(self, usage_report):
-        doc = usage_report.get_document_serialization()
+        doc = mos.get_server_usage_report_serialization(usage_report)
         result = self.usage_report_table.insert_one(doc)
         return result
 
