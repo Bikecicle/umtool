@@ -1,3 +1,4 @@
+from PollerManager import PollerManager
 from model.JobManager import JobManager
 from model.Job import Host
 from model.Job import Job

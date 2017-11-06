@@ -10,6 +10,11 @@ import MongoObjectDeSerialization as mods
 NUM_ID_BITS = 4096
 
 
+# Generate a random string that serves as a unique ID for any purpose
+def generate_unique_id():
+    return str(hex(random.getrandbits(NUM_ID_BITS)))
+
+
 class DatabaseMisc:
     def __init__(self):
         self.client = MongoClient()
@@ -77,7 +82,3 @@ class DatabaseMisc:
         result = self.usage_report_table.insert_one(doc)
         return result
 
-    # Generate a random string that serves as a unique ID for any purpose
-    @staticmethod
-    def generate_unique_id():
-        return str(hex(random.getrandbits(NUM_ID_BITS)))

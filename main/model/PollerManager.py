@@ -1,12 +1,12 @@
 from db import DatabaseMisc as dm
 from Poller import Poller
 
-class PollerManager:
 
+class PollerManager:
     def __init__(self):
-        self.pollers = {} # Dictionary mapping job id to Poller object
-        self.spawner_id
-        self.db = DatabaseMisc()
+        self.pollers = {}  # Dictionary mapping job id to Poller object
+        self.spawner_id = dm.generate_unique_id()
+        self.db = dm.DatabaseMisc()
 
     def check_database_state(self):
         # Check for new jobs
@@ -21,7 +21,6 @@ class PollerManager:
             if self.db.check_kill_order(job_id):
                 self.pollers[job_id].kill()
                 # TODO: Notify database of successful kill?
-
 
     def start_job(self, job):
         poller = Poller(job.host_list, job.interval)

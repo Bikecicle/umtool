@@ -25,9 +25,9 @@ def generate_mock_host_list(num_hosts):
 
 class TestDatabaseMisc(unittest.TestCase):
     def setUp(self):
-        self.job_id = dm.DatabaseMisc.generate_unique_id()
-        self.spawner_a_id = dm.DatabaseMisc.generate_unique_id()
-        self.spawner_b_id = dm.DatabaseMisc.generate_unique_id()
+        self.job_id = dm.generate_unique_id()
+        self.spawner_a_id = dm.generate_unique_id()
+        self.spawner_b_id = dm.generate_unique_id()
         self.host_list = generate_mock_host_list(2000)
 
         self.host_list_a = self.host_list[0:1000]

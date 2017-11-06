@@ -1,5 +1,6 @@
 import docker
 from db.DatabaseMisc import DatabaseMisc
+import db.DatabaseMisc as dm
 from Job import Job
 
 spawner_host_max = 1000
@@ -24,7 +25,7 @@ class JobManager:
 
     def start_job(self, host_list, interval):
         # Assign job id
-        job_id = self.db.generate_unique_id()
+        job_id = dm.generate_unique_id()
 
         # Delegate amongst spawners
         delegates = []
