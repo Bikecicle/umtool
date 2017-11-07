@@ -1,12 +1,15 @@
-from db import DatabaseMisc as dm
-from Poller import Poller
+from db.DatabaseMisc import DatabaseMisc
+from model.Poller import Poller
+import sys
+import time
 
+loop_interval = 1 # seconds
 
 class PollerManager:
-    def __init__(self):
+    def __init__(self, spawner_id):
         self.pollers = {}  # Dictionary mapping job id to Poller object
-        self.spawner_id = dm.generate_unique_id()
-        self.db = dm.DatabaseMisc()
+        self.spawner_id = spawner_id
+        self.db = DatabaseMisc()
 
     def check_database_state(self):
         # Check for new jobs
@@ -26,3 +29,13 @@ class PollerManager:
         poller = Poller(job.host_list, job.interval)
         poller.poll_servers()
         self.pollers[job.job_id] = poller
+
+def main():
+    poller_manager = PollerManager(sys.argv[1])
+    while True:
+        poller_manager.check_database_state()
+        time.sleep(loop_interval)
+
+if __name__ == '__main__':
+    main()
+

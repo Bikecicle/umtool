@@ -1,6 +1,6 @@
 from pyghmi.ipmi import command
-from UsageReportFactory import UsageReportFactory
-from ServerConnection import ServerConnection
+from model.UsageReportFactory import UsageReportFactory
+from model.ServerConnection import ServerConnection
 import time
 
 
@@ -11,7 +11,7 @@ class Poller:
         self.stopped = False
         for host in host_list:
             ipmi = command.Command(bmc=host.hostname, userid=host.userid, password=host.password)
-            print host.hostname + " - ipmi connection established"
+            print (host.hostname + " - ipmi connection established")
             usage_report_factory = UsageReportFactory(ipmi, host.unique_id)
             server_connection = ServerConnection(usage_report_factory)
             self.server_connection_list.append(server_connection)
@@ -21,7 +21,8 @@ class Poller:
             t_start = time.time()
             for server_connection in self.server_connection_list:
                 server_connection.poll_connection_and_save_usage_report()
-                print str(t_start) + ": scan @ " + server_connection.usage_report_factory.unique_id + " (" + server_connection.usage_report_factory.ipmi.bmc + ")"
+                print (str(t_start) + ": scan @ " + server_connection.usage_report_factory.unique_id +
+                       " (" + server_connection.usage_report_factory.ipmi.bmc + ")")
                 if self.stopped:
                     break
             t_end = time.time()

@@ -1,7 +1,7 @@
 import docker
 from db.DatabaseMisc import DatabaseMisc
 import db.DatabaseMisc as dm
-from Job import Job
+from model.Job import Job
 
 spawner_host_max = 1000
 spawner_image = ""  # TODO: decide on spawner container image name
