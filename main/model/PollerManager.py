@@ -3,8 +3,6 @@ from model.Poller import Poller
 import sys
 import time
 
-loop_interval = 1 # seconds
-
 class PollerManager:
     def __init__(self, spawner_id):
         self.pollers = {}  # Dictionary mapping job id to Poller object
@@ -30,12 +28,4 @@ class PollerManager:
         poller.poll_servers()
         self.pollers[job.job_id] = poller
 
-def main():
-    poller_manager = PollerManager(sys.argv[1])
-    while True:
-        poller_manager.check_database_state()
-        time.sleep(loop_interval)
-
-if __name__ == '__main__':
-    main()
 

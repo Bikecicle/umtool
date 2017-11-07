@@ -4,7 +4,7 @@ import db.DatabaseMisc as dm
 from model.Job import Job
 
 spawner_host_max = 1000
-spawner_image = ""  # TODO: decide on spawner container image name
+spawner_image = "spawner"
 
 class JobManager:
 
@@ -17,8 +17,12 @@ class JobManager:
     # Resource Management
 
     def start_new_spawner(self):
-        spawner = Spawner(self.client.containers.run(spawner_image, detach=True))
+        container = self.client.containers.run(spawner_image, detach=True, network_mode="host")
+        print "beep"
+        container.exec_run("python main/set_spawner_id.py " + container.id)
+        spawner = Spawner(container)
         self.spawners.append(spawner)
+        print ("New spawner running with ID: " + str(spawner.spawner_id))
         return spawner
 
     # Job Management
@@ -26,6 +30,7 @@ class JobManager:
     def start_job(self, host_list, interval):
         # Assign job id
         job_id = dm.generate_unique_id()
+        print ("New job with ID: " + str(job_id) + " - scanning " + str(len(host_list)) + " hosts every " + str(interval) + " seconds")
 
         # Delegate amongst spawners
         delegates = []
@@ -83,6 +88,13 @@ class Spawner:
     def __init__(self, container):
         
         self.container = container
-        self.spawner_id = self.container.id
+        self.spawner_id = container.id
         self.jobs = {} # Maps job id to list of hosts
         self.total_hosts = 0
+
+def main():
+    job_manager = JobManager()
+    #TODO: Implement default behavior of job manager
+
+if __name__ == '__main__':
+    main()
