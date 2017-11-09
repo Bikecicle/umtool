@@ -3,6 +3,7 @@ from model.Poller import Poller
 import sys
 import time
 
+
 class PollerManager:
     def __init__(self, spawner_id):
         self.pollers = {}  # Dictionary mapping job id to Poller object

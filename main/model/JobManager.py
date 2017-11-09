@@ -18,7 +18,6 @@ class JobManager:
 
     def start_new_spawner(self):
         container = self.client.containers.run(spawner_image, detach=True, network_mode="host")
-        print "beep"
         container.exec_run("python main/set_spawner_id.py " + container.id)
         spawner = Spawner(container)
         self.spawners.append(spawner)

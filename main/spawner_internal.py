@@ -2,6 +2,7 @@ from model.PollerManager import PollerManager
 import time
 
 
+# Script that is run by the docker container 
 loop_interval = 5
 
 def main():
