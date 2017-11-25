@@ -2,6 +2,7 @@ from pyghmi.ipmi import command
 from model.UsageReportFactory import UsageReportFactory
 from model.ServerConnection import ServerConnection
 import time
+import thread
 
 
 class Poller:
@@ -20,7 +21,7 @@ class Poller:
         while not self.stopped:
             t_start = time.time()
             for server_connection in self.server_connection_list:
-                server_connection.poll_connection_and_save_usage_report()
+                thread.start_new_thread(server_connection.poll_connection_and_save_usage_report())
                 print (str(t_start) + ": scan @ " + server_connection.usage_report_factory.unique_id +
                        " (" + server_connection.usage_report_factory.ipmi.bmc + ")")
                 if self.stopped:
