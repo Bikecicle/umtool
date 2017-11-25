@@ -2,6 +2,7 @@ from db.DatabaseMisc import DatabaseMisc
 from model.Poller import Poller
 import sys
 import time
+import thread
 
 
 class PollerManager:
@@ -26,7 +27,7 @@ class PollerManager:
 
     def start_job(self, job):
         poller = Poller(job.host_list, job.interval)
-        poller.poll_servers()
+        thread.start_new_thread(poller.poll_servers())
         self.pollers[job.job_id] = poller
 
 

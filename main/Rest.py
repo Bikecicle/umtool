@@ -1,16 +1,16 @@
 from bottle import route, run, post
-from model.PollerManager import PollerManager
+from model.JobManager import JobManager
 from model.Job import Job, Host
 from db import DatabaseMisc as dm
 import sys
 
-poller_manager = None
+job_manager = None
 
 
 def main():
-    global poller_manager
+    global job_manager
 
-    poller_manager = PollerManager()
+    job_manager = JobManager()
 
     run(host='localhost', port=8080, debug=True)
 
@@ -27,7 +27,7 @@ def create_simple_job():
     interval = 30
     job = Job(job_id, interval, host_list)
 
-    poller_manager.start_job(job)
+    job_manager.start_job(job)
 
 if __name__ == '__main__':
     main()

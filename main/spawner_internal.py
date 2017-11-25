@@ -3,7 +3,7 @@ import time
 
 
 # Script that is run by the docker container 
-loop_interval = 5
+loop_interval = 1
 
 def main():
     # Wait to be assigned a spawner id

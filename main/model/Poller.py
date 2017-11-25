@@ -30,7 +30,10 @@ class Poller:
             t_delta = t_end - t_start
             # Wait until end of polling interval (unless polling took longer than interval)
             if t_delta < self.interval:
-                time.sleep(self.interval - t_delta)
+                for i in range(int(self.interval - t_delta)):
+                    time.sleep(1)
+                    if self.stopped:
+                        break
 
     def kill(self):
         self.stopped = True

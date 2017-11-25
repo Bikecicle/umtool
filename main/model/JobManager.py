@@ -90,10 +90,3 @@ class Spawner:
         self.spawner_id = container.id
         self.jobs = {} # Maps job id to list of hosts
         self.total_hosts = 0
-
-def main():
-    job_manager = JobManager()
-    #TODO: Implement default behavior of job manager
-
-if __name__ == '__main__':
-    main()
