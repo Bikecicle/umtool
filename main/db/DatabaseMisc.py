@@ -22,27 +22,67 @@ class DatabaseMisc:
         self.job_table = self.db.job_tracking_table
         self.usage_report_table = self.db.usage_report_table
 
-    # Sets the "active" flag of a job to false
-    # Returns true if successful, false otherwise
-    # TODO: Write unit test
+    # Sets the "active" flag of a job to false for all of its entries
+    # Returns true if successful, false otherwise (as of now, this will never happen--exceptions need to be caught as
+    # they appear and handled by returning false)
     def kill_job(self, job_id):
+        query = {
+            'job_id': job_id
+        }
+
+        results = self.job_table.find(query)
+
+        for result in results:
+            result['active'] = False
+            self.job_table.save(result)
+
+        return True
+
+    # Check if all poller managers are inactive for a particular job
+    # Returns true if job is fully dead, false otherwise
+    def check_if_job_is_fully_dead(self, job_id):
+        query = {
+            'job_id': job_id
+        }
+
+        result_iterator = self.job_table.find(query)
+
+        job_is_fully_dead = True
+
+        for result in result_iterator:
+            # Each "result" will be a job entry in the database, which may or may not be active
+            spawner_is_active = result['active']
+            if spawner_is_active:
+                job_is_fully_dead = False
+                break
+
+        return job_is_fully_dead
+
+    # Call this method (as a spawner) to report that you have successfully terminated your part of a job
+    def spawner_report_death_complete(self, job_id, spawner_id):
+        query = {
+            'job_id': job_id,
+            'spawner.spawner_id': spawner_id
+        }
+
+        result = self.job_table.find_one(query)
+
+        result['spawner']['active'] = False
+
+        self.job_table.save(result)
+
+    # Check if a job is supposed to die
+    # Return true if yes, false if no
+    def check_kill_order(self, job_id):
         query = {
             'job_id': job_id
         }
 
         result = self.job_table.find_one(query)
 
-        result['active'] = False
+        job_active = result['active']
 
-        self.job_table.save(result)
-
-    # Check if all poller managers are inactive for a particular job
-    def check_if_job_is_fully_dead(self, job_id):
-        pass
-
-    # Check if a job is supposed to die
-    def check_kill_order(self, job_id):
-        pass
+        return not job_active
 
     # Check assigned jobs for a given spawner (returns list of Job data structures - see model.Job.Job)
     def check_job_assignments(self, spawner_id):
