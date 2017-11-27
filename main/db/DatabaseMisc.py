@@ -23,8 +23,18 @@ class DatabaseMisc:
         self.usage_report_table = self.db.usage_report_table
 
     # Sets the "active" flag of a job to false
+    # Returns true if successful, false otherwise
+    # TODO: Write unit test
     def kill_job(self, job_id):
-        pass
+        query = {
+            'job_id': job_id
+        }
+
+        result = self.job_table.find_one(query)
+
+        result['active'] = False
+
+        self.job_table.save(result)
 
     # Check if all poller managers are inactive for a particular job
     def check_if_job_is_fully_dead(self, job_id):
@@ -81,4 +91,3 @@ class DatabaseMisc:
         doc = mos.get_server_usage_report_serialization(usage_report)
         result = self.usage_report_table.insert_one(doc)
         return result
-

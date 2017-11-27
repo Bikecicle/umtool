@@ -52,6 +52,8 @@ class TestDatabaseMisc(unittest.TestCase):
 
         self.db_obj.check_job_assignments(self.spawner_a_id)
 
+        # Kill the job
+        self.db_obj.kill_job(self.job_id)
 
     def tearDown(self):
         pass
