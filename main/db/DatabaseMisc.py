@@ -100,7 +100,6 @@ class DatabaseMisc:
     # Returns true if the creation was successful. Otherwise false, but it will probably throw an exception
     # Any exceptions this method throws should be caught, so report them to whoever is in charge of maintaining
     # this method
-    # TODO: Maybe use model.Job.Job here too? - Griffin
     def create_job(self, job_object, spawner_id):
         """
         :param job_object:

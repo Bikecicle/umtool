@@ -1,7 +1,5 @@
 from db.DatabaseMisc import DatabaseMisc
 from model.Poller import Poller
-import sys
-import time
 import thread
 
 
@@ -23,7 +21,7 @@ class PollerManager:
         for job_id in self.pollers:
             if self.db.check_kill_order(job_id):
                 self.pollers[job_id].kill()
-                # TODO: Notify database of successful kill?
+                self.db.spawner_report_death_complete(job_id, self.spawner_id)
 
     def start_job(self, job):
         poller = Poller(job.host_list, job.interval)

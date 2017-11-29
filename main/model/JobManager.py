@@ -1,7 +1,6 @@
 import docker
-from db.DatabaseMisc import DatabaseMisc
-import db.DatabaseMisc as dm
-from model.Job import Job
+from main.db import DatabaseMisc
+from main.model import Job
 
 spawner_host_max = 1000
 spawner_image = "spawner"
@@ -13,6 +12,8 @@ class JobManager:
         self.spawners = []
         self.jobs = {} # Maps job id to list of delegate spawner ids
         self.db = DatabaseMisc()
+
+        self.spawner_host_max = spawner_host_max
 
     # Resource Management
 
@@ -34,7 +35,7 @@ class JobManager:
         # Delegate amongst spawners
         delegates = []
         for spawner in self.spawners:
-            remaining_connections = spawner_host_max - spawner.total_hosts
+            remaining_connections = self.spawner_host_max - spawner.total_hosts
             if remaining_connections > len(host_list):
                 self.delegate(job_id, interval, host_list, spawner)
                 host_list = []
@@ -49,18 +50,19 @@ class JobManager:
         # Create more spawners if host connections have maxed out
         while len(host_list) > 0:
             spawner = self.start_new_spawner()
-            if len(host_list) < spawner_host_max:
+            if len(host_list) < self.spawner_host_max:
                 self.delegate(job_id, interval, host_list, spawner)
                 host_list = []
             else:
                 host_subset = []
-                for i in list(spawner_host_max):
+                for i in list(self.spawner_host_max):
                     host_subset.append(host_list.remove())
                     self.delegate(job_id, interval, host_subset, spawner)
             delegates.append(spawner.spawner_id)
 
         # Map job id to delegate spawner ids
-        self.jobs[id] = delegates
+        self.jobs[job_id] = delegates
+        return job_id
 
     def delegate(self, job_id, interval, host_list, spawner):
         spawner.jobs[job_id] = host_list
@@ -68,19 +70,39 @@ class JobManager:
         self.db.create_job(Job(job_id, interval, host_list), spawner.spawner_id)
 
     def list_jobs(self):
-        # TODO: See job_status
-        pass
+        status_list = []
+        for job_id in self.jobs:
+            status_list.append(self.job_status(job_id))
+        return status_list
 
     def job_status(self, job_id):
-        # TODO: Figure out format of job status to return
-        pass
+        status = {}
+        status["running"] = self.db.check_if_job_is_fully_dead(job_id)
+        status["delegates"] = self.jobs[job_id]
+        return status
 
     def kill_job(self, job_id):
         self.db.kill_job(job_id)
+        self.jobs.pop(job_id)
 
     def kill_all_jobs(self):
         for job_id in self.jobs:
-            self.kill_job(job_id)
+            self.db.kill_job(job_id)
+        self.jobs = {}
+
+    def kill_spawner(self, spawner_id):
+        for spawner in self.spawners:
+            if spawner.spawner_id == spawner_id:
+                spawner.container.stop()
+                spawner.container.remove()
+                self.spawners.remove(spawner)
+                break
+
+    def kill_all_spawners(self):
+        for spawner in self.spawners:
+            spawner.container.stop()
+            spawner.container.remove()
+        self.spawners = []
 
 class Spawner:
 
