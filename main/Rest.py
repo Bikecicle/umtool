@@ -1,4 +1,4 @@
-from bottle import route, run, post
+from bottle import route, run, post, request
 from model.JobManager import JobManager
 from model.Job import Job, Host
 from db import DatabaseMisc as dm
@@ -35,7 +35,8 @@ def create_simple_job():
 
 @route('/start_job')  # TODO: figure out how to pass in csv then convert to list of host objects
 def start_job():
-    pass
+    content = request.get_json()
+    print(content['interval'])
 
 
 @route('/list_jobs', method='GET')
