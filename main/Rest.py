@@ -32,10 +32,16 @@ def create_simple_job():
 # Project API
 
 
-@route('/start_job')  # TODO: figure out how to pass in csv then convert to list of host objects
+@post('/start_job')  # TODO: figure out how to pass in csv then convert to list of host objects
 def start_job():
-    content = request.get_json()
-    print(content['interval'])
+    content = request.json
+    interval = content['interval']
+    host_list_json = content['hosts']
+    host_list = []
+    for host_json in host_list_json:
+        host = Host(host_json['hostname'], host_json['username'], host_json['password'], host_json['unique_id'])
+        host_list.append(host)
+    job_manager.start_job(host_list, interval)
 
 
 @route('/list_jobs', method='GET')
