@@ -1,6 +1,7 @@
 import docker
-from main.db import DatabaseMisc
-from main.model import Job
+from db.DatabaseMisc import DatabaseMisc
+from db.DatabaseMisc import generate_unique_id
+from model.Job import Job
 
 DEFAULT_SPAWNER_HOST_MAX = 1000
 SPAWNER_IMAGE = "spawner"
@@ -33,7 +34,7 @@ class JobManager:
 
     def start_job(self, host_list, interval):
         # Assign job id
-        job_id = DatabaseMisc.generate_unique_id()
+        job_id = generate_unique_id()
         print ("New job with ID: " + str(job_id) + " - scanning " + str(len(host_list)) + " hosts every " + str(interval) + " seconds")
 
         # Delegate amongst spawners

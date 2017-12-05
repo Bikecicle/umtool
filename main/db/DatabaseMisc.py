@@ -7,7 +7,7 @@ import db.MongoObjectSerialization as mos
 import db.MongoObjectDeSerialization as mods
 
 # How many bits to use for unique IDs
-NUM_ID_BITS = 4096
+NUM_ID_BITS = 1
 
 
 # Generate a random string that serves as a unique ID for any purpose
