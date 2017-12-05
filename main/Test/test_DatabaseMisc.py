@@ -1,5 +1,5 @@
 from __builtin__ import range
-import unittest2 as unittest
+import unittest
 from Utils import Config
 import random
 
