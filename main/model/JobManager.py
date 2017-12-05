@@ -5,6 +5,7 @@ from main.model import Job
 DEFAULT_SPAWNER_HOST_MAX = 1000
 SPAWNER_IMAGE = "spawner"
 
+
 class JobManager:
 
     def __init__(self, spawner_host_max=None):
@@ -12,7 +13,6 @@ class JobManager:
         self.spawners = []
         self.jobs = {} # Maps job id to list of delegate spawner ids
         self.db = DatabaseMisc()
-
 
         if not spawner_host_max:
             spawner_host_max = DEFAULT_SPAWNER_HOST_MAX
@@ -74,10 +74,10 @@ class JobManager:
         self.db.create_job(Job(job_id, interval, host_list), spawner.spawner_id)
 
     def list_jobs(self):
-        status_list = []
+        status_dict = {}
         for job_id in self.jobs:
-            status_list.append(self.job_status(job_id))
-        return status_list
+            status_dict[job_id] = self.job_status(job_id)
+        return status_dict
 
     def job_status(self, job_id):
         if job_id in self.jobs:
