@@ -3,8 +3,8 @@ from __future__ import print_function
 import random
 
 from pymongo import MongoClient
-import db.MongoObjectSerialization as mos
-import db.MongoObjectDeSerialization as mods
+import main.db.MongoObjectSerialization as mos
+import main.db.MongoObjectDeSerialization as mods
 
 # How many bits to use for unique IDs
 NUM_ID_BITS = 1

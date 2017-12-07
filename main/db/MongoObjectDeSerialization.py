@@ -1,4 +1,4 @@
-from model.Job import Job, Host
+from main.model.Job import Job, Host
 
 
 # This class is dedicated to converting MongoDB docs and iterators to specified objects

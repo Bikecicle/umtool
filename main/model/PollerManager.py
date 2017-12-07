@@ -1,5 +1,5 @@
-from db.DatabaseMisc import DatabaseMisc
-from model.Poller import Poller
+from main.db.DatabaseMisc import DatabaseMisc
+from main.model.Poller import Poller
 import thread
 
 
