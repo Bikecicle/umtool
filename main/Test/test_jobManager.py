@@ -91,6 +91,7 @@ class TestJobManager(TestCase):
         job_id_a = self.job_manager.start_job(self.host_list, self.interval)
         job_id_b = self.job_manager.start_job(self.host_list, self.interval)
 
+        # Kill everything and check
         self.job_manager.kill_all_jobs()
         self.assertEqual(2, len(self.job_manager.jobs))
         status_dict = self.job_manager.list_jobs()
@@ -100,16 +101,19 @@ class TestJobManager(TestCase):
     def test_job_status(self):
         job_id = self.job_manager.start_job(self.host_list, self.interval)
 
+        # Test invalid job id
         self.assertIsNone(self.job_manager.job_status("invalid_job_id"))
 
-        status = self.job_manager.job_status()
+        # Test good job id
+        status = self.job_manager.job_status(job_id)
         self.assertIsNotNone(status)
         self.assertTrue(status["running"])
         self.assertEqual(self.job_manager.jobs[job_id], status["delegates"])
 
         self.job_manager.kill_job(job_id)
 
-        status = self.job_manager.job_status()
+        # Test job is dead
+        status = self.job_manager.job_status(job_id)
         self.assertIsNotNone(status)
         self.assertFalse(status["running"])
         self.assertEqual(self.job_manager.jobs[job_id], status["delegates"])
@@ -118,21 +122,23 @@ class TestJobManager(TestCase):
         job_id_a = self.job_manager.start_job(self.host_list, self.interval)
         job_id_b = self.job_manager.start_job(self.host_list, self.interval)
 
+        # Test running list
         status_dict = self.job_manager.list_jobs()
         self.assertEqual(2, len(status_dict))
         self.assertTrue(status_dict[job_id_a]["running"])
         self.assertTrue(status_dict[job_id_b]["running"])
         self.assertEqual(self.job_manager.jobs[job_id_a], status_dict[job_id_a]["delegates"])
-        self.assertEqual(self.job_manager.jobs[job_id_a], status_dict[job_id_b]["delegates"])
+        self.assertEqual(self.job_manager.jobs[job_id_b], status_dict[job_id_b]["delegates"])
 
         self.job_manager.kill_all_jobs()
 
+        # Test dead list
         status_dict = self.job_manager.list_jobs()
         self.assertEqual(2, len(status_dict))
         self.assertFalse(status_dict[job_id_a]["running"])
         self.assertFalse(status_dict[job_id_b]["running"])
         self.assertEqual(self.job_manager.jobs[job_id_a], status_dict[job_id_a]["delegates"])
-        self.assertEqual(self.job_manager.jobs[job_id_a], status_dict[job_id_b]["delegates"])
+        self.assertEqual(self.job_manager.jobs[job_id_b], status_dict[job_id_b]["delegates"])
 
     def tearDown(self):
         self.test_kill_all_spawners()

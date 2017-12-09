@@ -82,7 +82,7 @@ class JobManager:
 
     def job_status(self, job_id):
         if job_id in self.jobs:
-            return {"running": self.db.check_if_job_is_fully_dead(job_id), "delegates": self.jobs[job_id]}
+            return {"running": not self.db.check_if_job_is_fully_dead(job_id), "delegates": self.jobs[job_id]}
         else:
             return None
 
@@ -103,7 +103,7 @@ class JobManager:
         success = False
         for spawner in self.spawners:
             if spawner.spawner_id == spawner_id:
-                spawner.container.stop()
+                spawner.container.kill()
                 spawner.container.remove()
                 self.spawners.remove(spawner)
                 success = True
@@ -112,7 +112,7 @@ class JobManager:
 
     def kill_all_spawners(self):
         for spawner in self.spawners:
-            spawner.container.stop()
+            spawner.container.kill()
             spawner.container.remove()
         self.spawners = []
 
