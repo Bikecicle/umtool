@@ -1,7 +1,7 @@
 import docker
-from main.db.DatabaseMisc import DatabaseMisc
-from main.db.DatabaseMisc import generate_unique_id
-from main.model.Job import Job
+from db.DatabaseMisc import DatabaseMisc
+from db.DatabaseMisc import generate_unique_id
+from model.Job import Job
 
 DEFAULT_SPAWNER_HOST_MAX = 1000
 SPAWNER_IMAGE = "spawner"

@@ -1,7 +1,5 @@
-from model.PollerManager import PollerManager
 from model.JobManager import JobManager
 from model.Job import Host
-from model.Job import Job
 import sys
 
 default_interval = 5

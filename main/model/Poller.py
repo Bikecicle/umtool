@@ -3,10 +3,12 @@ from model.UsageReportFactory import UsageReportFactory
 from model.ServerConnection import ServerConnection
 import time
 import thread
+import threading
 
 
-class Poller:
+class Poller (threading.Thread):
     def __init__(self, host_list, interval):
+        threading.Thread.__init__(self)
         self.interval = interval  # Polling interval in seconds
         self.server_connection_list = []
         self.stopped = False
@@ -16,6 +18,9 @@ class Poller:
             usage_report_factory = UsageReportFactory(ipmi, host.unique_id)
             server_connection = ServerConnection(usage_report_factory)
             self.server_connection_list.append(server_connection)
+
+    def run(self):
+        self.poll_servers()
 
     def poll_servers(self):
         while not self.stopped:

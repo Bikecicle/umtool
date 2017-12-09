@@ -1,7 +1,8 @@
 from main.db.DatabaseMisc import DatabaseMisc
+import threading
 
 
-class ServerConnection:
+class ServerConnection (threading.Thread):
     # @param Hostname: Just a string with the server to connect to
     #       This could be something like "10.2.2.2" or "abc.ncsu.edu"
     #
@@ -23,11 +24,15 @@ class ServerConnection:
     #       so that the save flag
     #
     def __init__(self, usage_report_factory):
+        threading.Thread.__init__(self)
         self.usage_report_factory = usage_report_factory
         #self.save_method = save_method
         #self.usage_report_data = []  # Only used if save_method 'm' flag is set
         #self.text_file_path = text_file_path  # Only used if save_method 't' flag is set
         self.db_connection = DatabaseMisc()
+
+    def run(self):
+        self.poll_connection_and_save_usage_report()
 
     # Polls the hostname and then saves the usage report to the database
     def poll_connection_and_save_usage_report(self):
