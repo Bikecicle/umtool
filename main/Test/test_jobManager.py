@@ -1,6 +1,6 @@
 from unittest import TestCase
-from main.model.JobManager import JobManager
-from main.model.Job import Host
+from model.JobManager import JobManager
+from model.Job import Host
 import docker
 
 

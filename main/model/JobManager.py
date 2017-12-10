@@ -89,7 +89,6 @@ class JobManager:
     def kill_job(self, job_id):
         if job_id in self.jobs:
             self.db.kill_job(job_id)
-            self.jobs.pop(job_id)
             return True
         else:
             return False
@@ -97,7 +96,6 @@ class JobManager:
     def kill_all_jobs(self):
         for job_id in self.jobs:
             self.db.kill_job(job_id)
-        self.jobs = {}
 
     def kill_spawner(self, spawner_id):
         success = False

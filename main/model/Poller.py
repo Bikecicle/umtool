@@ -26,7 +26,7 @@ class Poller (threading.Thread):
         while not self.stopped:
             t_start = time.time()
             for server_connection in self.server_connection_list:
-                thread.start_new_thread(server_connection.poll_connection_and_save_usage_report())
+                server_connection.start()
                 print (str(t_start) + ": scan @ " + server_connection.usage_report_factory.unique_id +
                        " (" + server_connection.usage_report_factory.ipmi.bmc + ")")
                 if self.stopped:
