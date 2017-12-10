@@ -1,4 +1,4 @@
-from main.model.ServerUsageReport import ServerUsageReport
+from model.ServerUsageReport import ServerUsageReport
 from time import time
 #from PackagedSensorReading import PackagedSensorReading
 #from pyghmi.ipmi import command

@@ -11,13 +11,18 @@ class Poller (threading.Thread):
         threading.Thread.__init__(self)
         self.interval = interval  # Polling interval in seconds
         self.server_connection_list = []
+        self.failed_connection_list = []
         self.stopped = False
         for host in host_list:
-            ipmi = command.Command(bmc=host.hostname, userid=host.userid, password=host.password)
-            print (host.hostname + " - ipmi connection established")
-            usage_report_factory = UsageReportFactory(ipmi, host.unique_id)
-            server_connection = ServerConnection(usage_report_factory)
-            self.server_connection_list.append(server_connection)
+            try:
+                ipmi = command.Command(bmc=host.hostname, userid=host.userid, password=host.password)
+                usage_report_factory = UsageReportFactory(ipmi, host.unique_id)
+                server_connection = ServerConnection(usage_report_factory)
+                self.server_connection_list.append(server_connection)
+                print (host.hostname + " - ipmi connection established")
+            except:
+                self.failed_connection_list.append(host.unique_id)
+                print (host.hostname + " - ipmi connection failed")
 
     def run(self):
         self.poll_servers()

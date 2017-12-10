@@ -9,25 +9,23 @@ class TestJobManager(TestCase):
         self.job_manager = JobManager()
         self.client = docker.from_env()
 
-        self.host_list = [Host("eb2-2214-sd01ipmi.csc.ncsu.edu", "admin", "sdteam18", "cisco")]
+        self.host_list = [Host("host", "user", "pass", "unique_id")]
         self.interval = 1
 
     def test_start_new_spawner(self):
         # Test successful creation
         spawner_a = self.job_manager.start_new_spawner()
         self.assertIsNotNone(spawner_a)
-        self.assertEqual("running", spawner_a.container.status())
+        self.assertIn(spawner_a.container, self.client.containers.list())
         self.assertEqual(1, len(self.job_manager.spawners))
-
-        # Check if spawner is running python script internally
-        if "python" not in spawner_a.container.top():
-            self.fail("Spawner not running script")
+        self.assertIn("spawner_internal.py", str(spawner_a.container.top()))
 
         # Test multiple spawners
         spawner_b = self.job_manager.start_new_spawner()
         self.assertIsNotNone(spawner_b)
-        self.assertEqual("running", spawner_b.container.status())
+        self.assertIn(spawner_b.container, self.client.containers.list())
         self.assertEqual(2, len(self.job_manager.spawners))
+        self.assertIn("spawner_internal.py", str(spawner_b.container.top()))
 
         self.job_manager.kill_all_spawners()
 
@@ -36,12 +34,12 @@ class TestJobManager(TestCase):
 
         # Test invalid spawner_id
         self.assertFalse(self.job_manager.kill_spawner("invalid_spawner_id"))
-        self.assertEqual("running", spawner.container.status())
+        self.assertIn(spawner.container, self.client.containers.list())
         self.assertEqual(1, len(self.job_manager.spawners))
 
         # Test valid spawner_id
         self.assertTrue(self.job_manager.kill_spawner(spawner.spawner_id))
-        self.assertEqual("exited", spawner.container.status())
+        self.assertNotIn(spawner.container, self.client.containers.list())
         self.assertEqual(0, len(self.job_manager.spawners))
 
     def test_kill_all_spawners(self):
@@ -49,8 +47,8 @@ class TestJobManager(TestCase):
         spawner_b = self.job_manager.start_new_spawner()
 
         self.job_manager.kill_all_spawners()
-        self.assertEqual("exited", spawner_a.container.status())
-        self.assertEqual("exited", spawner_b.container.status())
+        self.assertNotIn(spawner_a.container, self.client.containers.list())
+        self.assertNotIn(spawner_b.container, self.client.containers.list())
         self.assertEqual(0, len(self.job_manager.spawners))
 
     def test_start_job(self):

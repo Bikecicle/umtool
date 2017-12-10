@@ -1,6 +1,7 @@
 from unittest import TestCase
 from model.Poller import Poller
 from model.Job import Host
+import time
 
 class TestPoller(TestCase):
     def test_poll_servers(self):
@@ -12,9 +13,11 @@ class TestPoller(TestCase):
         # Check if running
         self.assertTrue(poller.isAlive())
         self.assertFalse(poller.stopped)
+        self.assertEqual(1, len(poller.failed_connection_list))
 
         poller.kill()
+        time.sleep(1)
 
         # Check if stopped
-        self.assertFalse(poller.isAlive())
         self.assertTrue(poller.stopped)
+        self.assertFalse(poller.isAlive())

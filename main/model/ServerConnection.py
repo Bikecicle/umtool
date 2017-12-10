@@ -1,4 +1,4 @@
-from main.db.DatabaseMisc import DatabaseMisc
+from db.DatabaseMisc import DatabaseMisc
 import threading
 
 

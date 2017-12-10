@@ -15,17 +15,12 @@ class PollerManager:
         for job in jobs:
             if not self.pollers.has_key(job.job_id):
                 # Create new poller, start polling, and store in map
-                self.start_job(job)
+                poller = Poller(job.host_list, job.interval)
+                poller.start()
+                self.pollers[job.job_id] = poller
 
         # Check for kill commands
         for job_id in self.pollers:
             if self.db.check_kill_order(job_id):
                 self.pollers[job_id].kill()
                 self.db.spawner_report_death_complete(job_id, self.spawner_id)
-
-    def start_job(self, job):
-        poller = Poller(job.host_list, job.interval)
-        poller.start()
-        self.pollers[job.job_id] = poller
-
-
