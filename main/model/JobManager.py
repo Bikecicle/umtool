@@ -2,8 +2,9 @@ import docker
 from db.DatabaseMisc import DatabaseMisc
 from db.DatabaseMisc import generate_unique_id
 from model.Job import Job
+from Utils.Config import get_str_option
 
-DEFAULT_SPAWNER_HOST_MAX = 1000
+DEFAULT_SPAWNER_HOST_MAX = int(get_str_option('MAX_CONNECTIONS_PER_HOST'))
 SPAWNER_IMAGE = "spawner"
 
 
