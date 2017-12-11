@@ -1,0 +1,4 @@
+settings:
+    MAX_CONNECTIONS_PER_HOST: 1000
+    database_host: localhost
+    database_port: 27017
