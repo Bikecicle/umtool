@@ -21,6 +21,13 @@ class DatabaseMisc:
         self.db = self.client.utilize
         self.job_table = self.db.job_tracking_table
         self.usage_report_table = self.db.usage_report_table
+    
+    # Drop whatever tables need to be dropped
+    # By default, drops the job table but not the usage
+    # table
+    def drop_tables(usage_table=False, job_table=True):
+        if usage_table: self.usage_report_table.drop()
+        if job_table: self.job_table.drop()
 
     # Sets the "active" flag of a job to false for all of its entries
     # Returns true if successful, false otherwise (as of now, this will never happen--exceptions need to be caught as
