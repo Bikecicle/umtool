@@ -1,5 +1,4 @@
 from pyghmi.ipmi import command
-from model.UsageReportFactory import UsageReportFactory
 from model.ServerConnection import ServerConnection
 import time
 import thread
@@ -16,8 +15,7 @@ class Poller (threading.Thread):
         for host in host_list:
             try:
                 ipmi = command.Command(bmc=host.hostname, userid=host.userid, password=host.password)
-                usage_report_factory = UsageReportFactory(ipmi, host.unique_id)
-                server_connection = ServerConnection(usage_report_factory)
+                server_connection = ServerConnection(ipmi, host.unique_id)
                 self.server_connection_list.append(server_connection)
                 print (host.hostname + " - ipmi connection established")
             except:
@@ -32,8 +30,8 @@ class Poller (threading.Thread):
             t_start = time.time()
             for server_connection in self.server_connection_list:
                 server_connection.start()
-                print (str(t_start) + ": scan @ " + server_connection.usage_report_factory.unique_id +
-                       " (" + server_connection.usage_report_factory.ipmi.bmc + ")")
+                print (str(t_start) + ": scan @ " + server_connection.unique_id +
+                       " (" + server_connection.ipmi.bmc + ")")
                 if self.stopped:
                     break
             t_end = time.time()
