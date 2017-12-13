@@ -1,0 +1,6 @@
+*.tar.*
+*.swp
+.idea/*
+*.pyc
+
+*.sqlite

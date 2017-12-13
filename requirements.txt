@@ -1,0 +1,4 @@
+pyghmi
+pymongo
+docker==2.0.0
+pyyaml
